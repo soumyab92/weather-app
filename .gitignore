@@ -1,0 +1,20 @@
+# Created by soumya
+# Edit at soumya
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+# End of soumya
