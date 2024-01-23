@@ -45,16 +45,18 @@ const WeatherApp = () => {
                 case error.UNKNOWN_ERROR:
                     alert("An unknown error occurred.");
                     break;
+                default:
+                    alert("An unexpected error occurred.");
             }
+        }
+
+        const getWeatherByCoords = async (lat, lon) => {
+            let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${api_key}`;
+            updateWeatherData(url);
         }
 
         getLocation();
     }, []); // Empty dependency array to run the effect only once
-
-    const getWeatherByCoords = async (lat, lon) => {
-        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${api_key}`;
-        updateWeatherData(url);
-    }
 
     const search = async () => {
         const element = document.getElementsByClassName("CityInput");
